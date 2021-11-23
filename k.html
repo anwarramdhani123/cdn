@@ -1,40 +1,146 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Upload File</title> 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+  <head>
+    <base target="_top">
+  <style>
+body {
+    max-width: 300px;
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    background: #fff;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+#formcontainer {
+    position: relative;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+#myForm {
+    position: relative;
+    display: block;
+    margin: 10px auto;
+}
+.select-file, .upload-file {
+    display: table;
+    width: 100%;
+    margin: 10px 0;
+    border-bottom: 1px solid #ddd;
+    text-align: right;
+}
+.title-select-file, .title-upload-file {
+    display: table-cell;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100px;
+    vertical-align: top;
+    line-height: normal;
+}
+.option-select-file, .input-upload-file {
+    line-height: normal;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    display: table-cell;
+    vertical-align: top;
+    font-size: 14px;
+}
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0 0 15px 0;
+    color: #555;
+    font-size: 14px;
+    width: 100%;
+    border: 0;
+    outline: none;
+}
+input#myFile {
+    position: relative;
+    display: block;
+    padding: 0 0 15px 0;
+    outline: none;
+    border: none;
+    text-align: left;
+    width: 100%;
+    max-width: 100px;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+    content: 'Pilih File';
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    background: #003961;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    box-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 12px;
+    margin: auto;
+    text-align: center;
+}
+input[type="button"] {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 5px 15px;
+    background: #003961;
+    color: #fff;
+    margin: auto;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#progressbar{
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
 
-<body>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
+}
+.progress-label {
+    float: left;
+    margin-top: 5px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    vertical-align: middle;
+    display: block;
+}
+
+  </style>
+  </head>
+  <body>
+  <div id="formcontainer">
+  <form id="myForm">
+  <div class="upload-file">
+  <div class="title-upload-file">
+  Upload File : 
+  </div>
+  <div class="input-upload-file">
+    <body>
+    <form action="upload.php" id="myForm" method="post" enctype="multipart/form-data">
         <br/>
-        <center><h1>Pilih file:<h1><center>
+        <center>Pilih file:<h1><center>
         <br/>
-<center>
-<div class="upload-file" />
-<div class="title-upload-file" />
-        <input type="file" name="berkas" />
+        <input type="file" name="berkas" id="myFile" class="custom-file-input" />
         <input type="submit" name="upload" value="upload" />
-</div>
-</center>
 </form> 
-</body> 
-</html>
-<style>
-.upload-file {
-display: table;
-width: 100%;
-margin: 10px 0;
-border-bottom: 1px solid #ddd;
-text-align: right;
-}
-
-.title-upload-file {
-display: table-cell;
-font-size: 14px;
-font-weight: bold;
-width: 100px;
-vertical-align: top;
-line-height: normal;
-}
-</style>
+</body>
+  </div>
+  </div>
