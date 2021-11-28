@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^ar05\.eu\.org$
+RewriteRule ^/?$ "https\:\/\/dashboard\.ar05\.eu\.org\/" [R=302,L] 
+
+ErrorDocument 404 https://dashboard.ar05.eu.org/$1
